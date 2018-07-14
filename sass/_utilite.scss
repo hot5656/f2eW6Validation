@@ -1,0 +1,40 @@
+
+@mixin clear-fix {
+	content: ".";
+	display:block;
+	visibility:hidden;
+	height:0;
+	clear: both;
+}
+@mixin clear-fix-rght {
+	content: ".";
+	display:block;
+	visibility:hidden;
+	height:0;
+	clear: right;
+}
+@mixin clear-fix-left {
+	content: ".";
+	display:block;
+	visibility:hidden;
+	height:0;
+	clear: left;
+}
+@mixin circircle($size, $bpcolor) {
+  	border-radius: 50%;
+  	height: $size;
+  	width: $size;
+  	padding-top: $size/3;
+  	font-size: $size/3;
+  	background: $bpcolor;
+}
+@mixin box-size {
+  /* box size incluse padding and boarder */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box; 
+}
+
+.clear-fix {
+	clear: both;	
+}

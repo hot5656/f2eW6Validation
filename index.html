@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="stylesheets/index.css">
+	<!-- Roboto Font -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+<body>
+	<div class="wrap">
+		<div class="content">
+			<div class="top-line"></div>
+			<div class="step-1">
+				<div class="process-bar">
+					<div class="doing"><div class="inner"></div></div>
+					<div class="wait-line"></div>
+					<div class="wait-do"></div>
+					<div class="wait-line"></div>
+					<div class="wait-do"></div>
+					<div class="wait-line"></div>
+					<div class="wait-do"></div>
+					<div class="clear-fix"></div>
+				</div>
+				<div class="title">Create Account</div>
+				<div class="subtitle">Glad to see you here!</div>
+
+				<form action="javascript:checkAccount(1,
+								account.value,
+								passwd.value,
+								passwd2.value)">
+					<!--  -->
+					<label for="account">Account</label>
+					<input class="input-text" type="text" placeholder="example@email.com" id="account" name="account">
+					<div class="warn-item">
+						<div class="warning-left">
+							<i class="fas fa-caret-left"></i>			
+						</div>
+						<div class="warning-text">
+							INVALID EMAIL
+						</div>						
+					</div>
+					<!--  -->
+					<label for="passwd">Password</label>
+					<input class="input-text" type="password" placeholder="●●●●●●●●" id="passwd" name="passwd">
+					<div class="warn-item">
+						<div class="warning-left">
+							<i class="fas fa-caret-left"></i>				
+						</div>
+						<div class="warning-text">
+							MINIMUM 8 CHARACTERS
+						</div>						
+					</div>
+					<!--  -->
+					<label for="passwd2">Comfirm Password</label>
+					<input class="input-text" type="password" placeholder="●●●●●●●●" id="passwd2" name="passwd2">
+					<div class="warn-item">
+						<div class="warning-left">
+							<i class="fas fa-caret-left"></i>				
+						</div>
+						<div class="warning-text">
+							INVALID EMAIL
+						</div>						
+					</div>
+					<!--  -->
+					<input class="submit" type="submit" value="SUBMIT & NEXT">
+				</form>
+			</div>
+
+			<div class="step-2">
+				<div class="process-bar">
+					<div class="done">&radic;</div>
+					<div class="done-line"></div>
+					<div class="doing"><div class="inner"></div></div>
+					<div class="wait-line"></div>
+					<div class="wait-do"></div>
+					<div class="wait-line"></div>
+					<div class="wait-do"></div>
+					<div class="clear-fix"></div>
+				</div>
+				<div class="title">General Infomation</div>
+				<div class="subtitle">Tell us who you are!!</div>
+				<form action="javascript:CheckPerson(2,
+									phone.value,
+									address.value
+								)">
+					<!--  -->
+					<label for="namt" class="half-width">Name <span class="label">(optional)</span></label>
+					<div class="half-space"></div>
+					<label for="phone" class="half-width">Phone*</label>
+					<div class="clear-fix"></div>
+					<input type="text" class="half-input" placeholder="Example Name" id="name" name="name">
+					<div class="half-space"></div>
+					<input type="text" class="half-input" placeholder="0912 345 678" id="phone" name="phone">
+					<div class="warn-item">
+						<div class="warning-left">
+							<i class="fas fa-caret-left"></i>				
+						</div>
+						<div class="warning-text">
+							NUMBERS ONLY
+						</div>
+					</div>
+					<!--  -->
+					<label for="year">Birth Date <span class="label">(optional)</span></label>
+					<input class="third-input" type="number" placeholder="YYYY" id="year" name="year" min="2010" max="2099" >
+					<div class="third-space"></div>
+					<input class="third-input" type="number" placeholder="MM" id="month" name="month" min="1" max="12" >
+					<div class="third-space"></div>
+					<input class="third-input" type="number" placeholder="DD" id="day" name="day" min="1" max="31" >
+					<!--  -->
+					<label for="city">Address*</label>
+					<input type="text" class="half-input" placeholder="City" id="city" name="city">
+					<div class="half-space"></div>
+					<input type="text" class="half-input" placeholder="Dist" id="dist" name="dist">
+					<input class="input-text" type="text" placeholder="Address Detail" id="address" name="address">
+					<div class="warn-item">
+						<div class="warning-left">
+							<i class="fas fa-caret-left"></i>				
+						</div>
+						<div class="warning-text">
+							REQUIRED FILED
+						</div>
+					</div>
+					<!--  -->
+					<input class="submit" type="submit" value="SUBMIT & NEXT">
+				</form>
+			</div>
+
+			<div class="step-3">
+				<div class="process-bar">
+					<div class="done">&radic;</div>
+					<div class="done-line"></div>
+					<div class="done">&radic;</div>
+					<div class="done-line"></div>
+					<div class="doing"><div class="inner"></div></div>
+					<div class="wait-line"></div>
+					<div class="wait-do"></div>
+					<div class="clear-fix"></div>
+				</div>
+				<div class="title">Update Profile Picture</div>
+				<div class="subtitle">We wanna know you more!!</div>
+				<form action="javascript:checkPic(3)">
+					<!--  -->
+					<label class="up-pic">
+<!-- 						<input id="upload_img" style="display:none;" type="file"> -->
+<!-- 						<input id="upload_img" type="file" onchange="showImage(this) "accept="image/gif, image/jpeg, image/png" multiple="multiple" > -->
+						<input id="upload_img" type="file" style="display:none;" onchange="showImage(this) "accept="image/gif, image/jpeg, image/png" multiple="multiple" >
+						<i class="fas fa-images fa-3x"></i>
+						<div class="up-text">
+							<div>UPLOAD UP TO 3 PHOTOS</div>
+							<div>MAX SIZE: 150*150px</div>							
+						</div>
+					</label>
+					<div class="pic-block">
+						<a class="pic-box " href="">
+							<img class="pic-show" src="" />
+							<div class="img-div">
+								<i class="fas fa-trash-alt"></i>
+							</div>
+						</a>
+						<a class="pic-box " href="">
+	  					<img class="pic-show" src="" />
+							<div class="img-div">
+								<i class="fas fa-trash-alt"></i>
+							</div>
+						</a>
+						<a class="pic-box " href="">
+	   					<img class="pic-show" src="" />
+							<div class="img-div">
+								<i class="fas fa-trash-alt"></i>
+							</div>
+						</a>
+						<!-- <div class="clear-fix"></div> -->
+					</div>
+					<!--  -->
+					<input class="submit" type="submit" value="SUBMIT & NEXT">
+				</form>
+			</div>
+
+			<div class="step-4">
+				<div class="process-bar">
+					<div class="done">&radic;</div>
+					<div class="done-line"></div>
+					<div class="done">&radic;</div>
+					<div class="done-line"></div>
+					<div class="done">&radic;</div>
+					<div class="done-line"></div>
+					<div class="doing"><div class="inner"></div></div>
+					<div class="clear-fix"></div>
+				</div>
+				<div class="title">Payment Method</div>
+				<div class="subtitle">Add your credit card infomation! </div>
+				<form action="javascript:checkBack(4, card_no.value)">
+					<!--  -->
+					<label for="card-no">Card Number</label>
+					<input class="input-text" type="text" placeholder="1234 5678 9012 3456" id="card_no" name="card_no">
+					<div class="warn-item">
+						<div class="warning-left">
+							<i class="fas fa-caret-left"></i>				
+						</div>
+						<div class="warning-text">
+							INVALID NUMBER
+						</div>
+					</div>
+					<!--  -->
+					<label for="card-name" class="half-width">Cardholder Name</label>
+					<div class="half-space"></div>
+					<label for="bank-name" class="half-width">Bank Name</label>
+					<div class="clear-fix"></div>
+					<input type="text" class="half-input" placeholder="EXAMPLE NAME" id="card-name" name="card-name">
+					<div class="half-space"></div>
+					<input type="text" class="half-input" placeholder="EXAMPLE BANK" id="bank-name" name="bank-name">
+					<!--  -->
+					<div class="clear-fix"></div>
+					<label for="cvv" class="third-width">CVV</label>
+					<div class="third-space"></div>
+					<label for="exp-month" class="third-width">Expire Date</label>
+					<div class="clear-fix"></div>
+					<input class="third-input" type="text" placeholder="123" id="cvv" name="cvv">
+					<div class="third-space"></div>
+					<input class="third-input" type="number" placeholder="MM" id="exp-month" name="exp-month"  min="1" max="12">
+					<div class="third-space"></div>
+					<input class="third-input" type="number" placeholder="DD" id="exp-day" name="exp-day"  min="1" max="31">
+					<!--  -->
+					<input class="submit" type="submit" value="DONE">
+				</form>
+			</div>
+
+			<div class="step-5">
+				<div class="process-bar">
+					<div class="done">&radic;</div>
+					<div class="done-line"></div>
+					<div class="done">&radic;</div>
+					<div class="done-line"></div>
+					<div class="done">&radic;</div>
+					<div class="done-line"></div>
+					<div class="done">&radic;</div>
+					<div class="clear-fix"></div>
+				</div>
+				<div class="title">Congratulations</div>
+				<div class="subtitle">Now you’re one of us!</div>
+				<!--  -->
+				<div class="smile">
+					<i class="fas fa-smile fa-10x"></i>
+				</div>
+				<!--  -->
+				<div class="valid-success">Redirected to homepage after 5 seconds…</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- javascript -->
+	<script src="all.js"></script>
+</body>
+</html>
